@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wild Skies — All-Year Rural Campsites within 2 Hours of Cheltenham</title>
+<meta name="description" content="Small, picturesque, all-year campsites with proper toilets and showers within ~2 hours of Cheltenham. Researched October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Zilla+Slab:wght@500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a1313; --card:#0f1e1e; --card2:#132626;
+    --ink:#e9f0ec; --muted:#9db8b3; --faint:#647873;
+    --mist:#a8c3c9; --teal:#274d4d; --cedar:#d29a5b; --cedar2:#e8b878;
+    --gold:#f2b544; --green:#8fd694;
+    --line:rgba(168,195,201,.13);
+    --serif:'Zilla Slab',Georgia,'Times New Roman',serif;
+    --script:'Yellowtail',cursive;
+    --cond:'Oswald',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;color:var(--ink);
+    background:linear-gradient(180deg,#0a1313 0%,#0a1214 55%,#081011 100%);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* ---------- hero ---------- */
+  .sky{position:relative;overflow:hidden;background:#060d10}
+  .sky svg.scene{position:absolute;inset:0;width:100%;height:100%}
+  .fogDrift{animation:fog 26s ease-in-out infinite alternate}
+  @keyframes fog{from{transform:translateX(-46px)}to{transform:translateX(46px)}}
+  .hero{position:relative;z-index:2;text-align:center;padding:86px 20px 66px}
+  .kicker{font-family:var(--cond);font-weight:500;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--mist);margin-bottom:14px}
+  .wordmark{font-family:var(--script);font-size:clamp(66px,11vw,124px);line-height:1;color:#f2e8d5;
+    text-shadow:0 3px 26px rgba(0,0,0,.8),0 0 70px rgba(210,154,91,.28);margin:4px 0;transform:rotate(-2deg)}
+  .wordsub{font-family:var(--cond);font-weight:500;font-size:clamp(13px,2vw,17px);letter-spacing:.52em;text-transform:uppercase;
+    color:var(--cedar2);margin:0 0 22px;text-indent:.52em}
+  .hero .sub{color:#cfdcd8;max-width:700px;margin:0 auto;font-size:17px;text-shadow:0 1px 14px rgba(0,0,0,.85)}
+  .hero .sub b{color:var(--ink)}
+  .stats{display:flex;gap:10px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+  .stats span{font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);
+    border:1px solid var(--line);border-radius:999px;padding:7px 16px;background:rgba(8,16,16,.55);backdrop-filter:blur(4px)}
+  .caveat{margin:26px auto 0;max-width:760px;background:rgba(8,16,16,.72);border:1px solid rgba(210,154,91,.4);
+    border-radius:12px;padding:12px 18px;font-size:14px;color:var(--cedar2);backdrop-filter:blur(4px)}
+  /* ---------- filters ---------- */
+  .filters{position:sticky;top:0;z-index:5;background:rgba(8,15,15,.94);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin:0 0 8px}
+  .filters .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;
+    padding:8px 16px;font-size:13px;cursor:pointer;transition:all .15s;font-family:var(--cond);font-weight:500;
+    letter-spacing:.1em;text-transform:uppercase}
+  .chip:hover{border-color:var(--mist);color:var(--ink)}
+  .chip.on{background:var(--mist);border-color:var(--mist);color:#0c1515;font-weight:700}
+  .count{margin-left:auto;color:var(--faint);font-size:13px;font-family:var(--mono)}
+  h2.section{font-family:var(--serif);font-weight:650;font-size:27px;margin:42px 0 4px;display:flex;align-items:center;gap:12px}
+  h2.section .n{font-size:13px;color:var(--faint);font-weight:400;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .secNo{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--faint);
+    border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+  p.lede{color:var(--muted);margin:0 0 6px;max-width:780px}
+  p.lede b{color:var(--ink)}
+  /* ---------- poll ---------- */
+  #voterBar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 4px}
+  .vlabel{color:var(--muted);font-size:14px}
+  #whoBanner{margin-top:12px}
+  #whoBanner input{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;
+    padding:9px 14px;font-size:15px;font-family:inherit;width:min(280px,100%)}
+  .lbtabs{display:flex;gap:8px;margin:12px 0 4px}
+  #leaderboard{display:grid;gap:8px;margin:12px 0 4px}
+  .lbRow{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px}
+  .lbRow.leader{border-color:var(--cedar);background:rgba(210,154,91,.07)}
+  .lbRank{font-size:18px;min-width:30px;text-align:center}
+  .lbName{font-weight:600;font-family:var(--serif);font-size:17px}
+  .lbStars{color:var(--gold);letter-spacing:2px;white-space:nowrap}
+  .lbLoc{margin-left:auto;color:var(--faint);font-size:13px;text-align:right}
+  .pollActions{display:flex;gap:8px;margin:10px 0 4px;flex-wrap:wrap}
+  details.how{margin:10px 0 4px;color:var(--muted);font-size:14px;max-width:780px}
+  details.how summary{cursor:pointer;color:var(--mist);font-weight:600}
+  details.how p{margin:8px 0}
+  /* ---------- cards ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:18px}
+  .card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+  .card:hover{transform:translateY(-2px);border-color:rgba(168,195,201,.4)}
+  .card.hide{display:none}
+  .card.isLeader{border-color:var(--cedar);box-shadow:0 0 0 1px var(--cedar)}
+  .scene{height:60px;position:relative;overflow:hidden;flex:none;
+    background:linear-gradient(180deg,hsl(var(--h,200),26%,11%),hsl(var(--h,200),30%,19%))}
+  .scene svg{position:absolute;inset:0;width:100%;height:100%}
+  .cbody{padding:18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .card h3{margin:0;font-size:20px;letter-spacing:0;font-family:var(--serif);font-weight:700}
+  .card .loc{color:var(--mist);font-size:13px;margin-top:3px;font-family:var(--mono);letter-spacing:.02em}
+  .badges{display:flex;gap:6px;flex:none;align-items:flex-start}
+  .badge{font-family:var(--cond);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--cedar);color:#1a1206;border-radius:6px;padding:4px 9px;white-space:nowrap}
+  .badge.dim{background:transparent;border:1px solid var(--faint);color:var(--faint)}
+  .scorePill{font-size:12px;font-weight:800;background:rgba(168,195,201,.08);border:1px solid var(--mist);
+    color:var(--mist);border-radius:8px;padding:4px 8px;white-space:nowrap;font-family:var(--mono)}
+  .scorePill.dim{border-color:var(--faint);color:var(--faint);background:transparent}
+  .desc{color:var(--ink);font-size:14.5px;margin:0}
+  .facts{margin:0;padding:0;list-style:none;font-size:13.5px;color:var(--muted);display:grid;gap:5px}
+  .facts b{color:var(--ink);font-weight:600}
+  .facts .ok{color:var(--green)}
+  .rev{font-size:13.5px;color:var(--cedar2)}
+  .warn{font-size:13px;color:#f0b9a8;background:rgba(210,120,90,.07);border:1px solid rgba(210,120,90,.25);
+    border-radius:8px;padding:8px 11px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .tag.dark{color:#d7e7ea;border-color:rgba(168,195,201,.4)}
+  details.lh{font-size:13.5px;color:var(--muted)}
+  details.lh summary{cursor:pointer;color:var(--mist);font-weight:600}
+  details.lh .why{margin:8px 0 4px;color:var(--ink)}
+  details.lh ul{margin:6px 0 10px;padding-left:18px;display:grid;gap:4px}
+  .lv{color:var(--green)} .ht{color:#f0b9a8}
+  .starRow{font-size:13.5px;color:var(--muted);display:flex;align-items:center;border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+  .starRow .star{cursor:pointer;font-size:22px;color:var(--faint);line-height:1;padding:0 1px;transition:color .1s}
+  .starRow .star.lit{color:var(--gold)}
+  .go{margin-top:auto;padding-top:4px}
+  .go a{display:inline-block;background:var(--cedar);color:#1a1206;font-family:var(--cond);font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:10px;padding:10px 20px;font-size:13px}
+  .go a:hover{background:var(--cedar2)}
+  .go .nolink{font-size:13px;color:var(--faint)}
+  footer{margin:56px 0 40px;color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:22px}
+  footer a{color:var(--mist)}
+  .owldiv{text-align:center;margin:10px 0 2px;opacity:.9}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.lbLoc{display:none}}
+</style>
+</head>
+
+<div class="sky">
+  <svg class="scene" viewBox="0 0 1200 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#060d10"/><stop offset=".55" stop-color="#10262b"/><stop offset="1" stop-color="#1d3a3c"/>
+      </linearGradient>
+      <linearGradient id="fogG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#cfdfe2" stop-opacity="0"/><stop offset=".5" stop-color="#cfdfe2" stop-opacity=".13"/><stop offset="1" stop-color="#cfdfe2" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="vanGlow" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#e8a84d" stop-opacity=".45"/><stop offset="1" stop-color="#e8a84d" stop-opacity="0"/>
+      </radialGradient>
+      <g id="pine" fill="#0a1818">
+        <polygon points="0,-64 16,-28 -16,-28"/><polygon points="0,-48 20,-8 -20,-8"/><rect x="-3.5" y="-8" width="7" height="12"/>
+      </g>
+      <g id="owl">
+        <ellipse cx="0" cy="0" rx="17" ry="23" fill="#0a1414"/>
+        <polygon points="-13,-17 -21,-32 -5,-21" fill="#0a1414"/>
+        <polygon points="13,-17 21,-32 5,-21" fill="#0a1414"/>
+        <polygon points="-13,10 -4,20 -14,18" fill="#0a1414"/>
+        <polygon points="13,10 4,20 14,18" fill="#0a1414"/>
+        <circle cx="-7.5" cy="-5" r="5.5" fill="#e8a84d"/>
+        <circle cx="7.5" cy="-5" r="5.5" fill="#e8a84d"/>
+        <circle cx="-7.5" cy="-5" r="2.2" fill="#0a1414"/>
+        <circle cx="7.5" cy="-5" r="2.2" fill="#0a1414"/>
+        <polygon points="-4,5 4,5 0,10" fill="#d29a5b"/>
+      </g>
+    </defs>
+    <rect width="1200" height="480" fill="url(#skyG)"/>
+    <g fill="#e8f0f2" opacity=".5"><circle cx="80" cy="70" r="1.4"/><circle cx="140" cy="95" r="1"/><circle cx="200" cy="120" r="1.5"/><circle cx="260" cy="120" r="1.9"/><circle cx="320" cy="165" r="1.4"/><circle cx="380" cy="190" r="1"/><circle cx="440" cy="210" r="1.5"/><circle cx="500" cy="235" r="1.9"/><circle cx="560" cy="255" r="1.4"/><circle cx="620" cy="280" r="1"/><circle cx="680" cy="300" r="1.3"/><circle cx="950" cy="60" r="1.2"/><circle cx="1050" cy="90" r="1.6"/><circle cx="1150" cy="50" r="1.4"/><circle cx="700" cy="70" r="1"/><circle cx="420" cy="60" r="1.2"/><circle cx="300" cy="40" r="1"/><circle cx="60" cy="150" r="1"/><circle cx="1120" cy="170" r="1.2"/><circle cx="880" cy="140" r="1"/><circle cx="180" cy="200" r="1"/><circle cx="120" cy="260" r="1"/><circle cx="760" cy="220" r="1"/><circle cx="1000" cy="230" r="1.2"/><circle cx="40" cy="330" r="1"/><circle cx="1160" cy="320" r="1"/></g>
+    <circle cx="952" cy="96" r="34" fill="#e6e2d0" opacity=".7"/>
+    <ellipse cx="952" cy="96" rx="72" ry="24" fill="#cfdfe2" opacity=".12"/>
+    <polygon points="0,480 210,300 430,480" fill="#33505a" opacity=".45"/>
+    <polygon points="310,480 580,260 870,480" fill="#243c40" opacity=".8"/>
+    <g class="fogDrift"><rect x="-120" y="296" width="1440" height="72" fill="url(#fogG)"/></g>
+    <polygon points="660,480 950,290 1240,480" fill="#152a2c"/>
+    <rect x="0" y="336" width="1200" height="44" fill="url(#fogG)" opacity=".65"/>
+    <use href="#pine" transform="translate(90,478) scale(1.25)"/><use href="#pine" transform="translate(150,480) scale(.9)"/>
+    <use href="#pine" transform="translate(210,478) scale(1.1)"/><use href="#pine" transform="translate(265,480) scale(.75)"/>
+    <use href="#pine" transform="translate(1055,482) scale(1.9)"/>
+    <rect x="1022" y="368" width="66" height="6" rx="3" fill="#0a1414"/>
+    <use href="#owl" transform="translate(1055,345)"/>
+    <g>
+      <circle cx="449" cy="428" r="48" fill="url(#vanGlow)"/>
+      <g transform="translate(390,455)">
+        <rect x="0" y="-36" width="118" height="32" rx="13" fill="#0d1b1b"/>
+        <rect x="88" y="-30" width="30" height="26" rx="9" fill="#0d1b1b"/>
+        <rect x="12" y="-29" width="20" height="11" rx="2" fill="#e8a84d" opacity=".9"/>
+        <rect x="38" y="-29" width="20" height="11" rx="2" fill="#e8a84d" opacity=".9"/>
+        <rect x="64" y="-29" width="16" height="11" rx="2" fill="#e8a84d" opacity=".55"/>
+        <rect x="94" y="-25" width="18" height="9" rx="2" fill="#9db8b3" opacity=".45"/>
+        <circle cx="32" cy="-2" r="11" fill="#050c0c"/><circle cx="32" cy="-2" r="4.5" fill="#425252"/>
+        <circle cx="96" cy="-2" r="11" fill="#050c0c"/><circle cx="96" cy="-2" r="4.5" fill="#425252"/>
+      </g>
+    </g>
+    <polygon points="0,480 0,452 1200,452 1200,480" fill="#081213"/>
+  </svg>
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">A field guide to all-year camping · within 2 hrs of Cheltenham</div>
+      <div class="wordmark">Wild Skies</div>
+      <div class="wordsub">rural campsites · Cheltenham</div>
+      <p class="sub">Small, picturesque, quirky and peaceful sites with proper toilets &amp; showers, open <b>all year round</b>, within about two hours of Cheltenham. The ones people rave about — from the Cotswolds and the Malverns to the Wye Valley and the Mendips.</p>
+      <div class="stats"><span>21 sites</span><span>Cotswolds to Wye Valley</span><span>Max ~2 hrs</span></div>
+      <div class="caveat">⚠️ All-year opening was confirmed from campsite listings in October 2026 — please double-check “open all year” with the site itself before booking, especially for a winter trip. Prices are indicative.</div>
+    </div>
+  </header>
+</div>
+
+<div class="filters"><div class="wrap" id="chips">
+  <button class="chip on" data-f="all">All sites</button>
+  <button class="chip" data-f="standout">★ Standouts</button>
+  <button class="chip" data-f="dark">Dark skies</button>
+  <button class="chip" data-f="near">Under an hour</button>
+  <button class="chip" data-f="motorhome">Motorhome-friendly</button>
+  <button class="chip" data-f="campfire">Campfires</button>
+  <button class="chip" data-f="kids">Kids welcome</button>
+  <button class="chip" id="sortBtn" title="Sort the shortlist by brief-fit score">⇅ Brief fit</button>
+  <span class="count" id="count"></span>
+</div></div>
+
+<div class="wrap">
+  <section id="poll">
+    <h2 class="section"><span class="secNo">01</span>The great campsite vote <span class="n">tap the stars, crown a leader</span></h2>
+    <p class="lede">Everyone scores the sites that appeal to them. Add each person, flip between individual and combined leaderboards, and see which site wins.</p>
+    <div id="whoBanner" class="caveat" style="display:none"></div>
+    <div id="voterBar"></div>
+    <div class="lbtabs" id="lbtabs">
+      <button class="chip on" data-tab="me">My leaderboard</button>
+      <button class="chip" data-tab="all">Everyone combined</button>
+    </div>
+    <p class="lede" id="lbEmpty">Tap the stars on any site below to score it out of five — the leader will be crowned here.</p>
+    <div id="leaderboard"></div>
+    <div class="pollActions">
+      <button class="chip" id="shareBtn">Copy my scores link</button>
+      <button class="chip" id="resetBtn">Reset my scores</button>
+    </div>
+    <div id="shareBanner" class="caveat" style="display:none;margin-top:12px"></div>
+    <details class="how"><summary>How does the scoring work?</summary>
+      <p>Scores live <b>in this browser only</b> — nothing is uploaded anywhere, because the site is just static files on GitHub Pages with no server behind it. Add each person who's choosing (you, Sarah, Dean…) with the + button, tap the stars on the sites that appeal to each of you, and the leaderboard crowns the leader — per person, or combined across everyone.</p>
+      <p>To pull in someone's scores from another phone, get them to tap <b>Copy my scores link</b> and open it here: you'll be offered to save their scores alongside yours. That's how the combined board gets built — one shared link at a time.</p>
+    </details>
+  </section>
+
+  <h2 class="section"><span class="secNo">02</span>The shortlist <span class="n" id="secCount"></span></h2>
+  <p class="lede">Standouts first, then the rest roughly by drive time from Cheltenham. Each card carries a <b>brief-fit score</b> (out of 100) rating how well the site matches the brief — expand <b>What people love &amp; hate</b> for the detail, or hit <b>⇅ Brief fit</b> above to sort by score.</p>
+  <div class="grid" id="grid"></div>
+
+  <h2 class="section"><span class="secNo">03</span>Worth a look — verify first</h2>
+  <p class="lede">These looked promising but something couldn’t be confirmed (usually the all-year opening or the showers). One phone call could promote any of them.</p>
+  <div class="grid" id="maybe"></div>
+
+  <div class="owldiv"><svg viewBox="-42 -42 84 84" width="56" height="56" aria-hidden="true">
+<ellipse cx="0" cy="0" rx="17" ry="23" fill="#0f1e1e" stroke="#2a3f3d" stroke-width="1.5"/>
+<polygon points="-13,-17 -21,-32 -5,-21" fill="#0f1e1e" stroke="#2a3f3d" stroke-width="1.5"/>
+<polygon points="13,-17 21,-32 5,-21" fill="#0f1e1e" stroke="#2a3f3d" stroke-width="1.5"/>
+<circle cx="-7.5" cy="-5" r="5.5" fill="#e8a84d"/><circle cx="7.5" cy="-5" r="5.5" fill="#e8a84d"/>
+<circle cx="-7.5" cy="-5" r="2.2" fill="#0a1414"/><circle cx="7.5" cy="-5" r="2.2" fill="#0a1414"/>
+<polygon points="-4,5 4,5 0,10" fill="#d29a5b"/>
+</svg></div>
+  <footer>
+    Researched October 2026 from campsite listings, club sites (Camping and Caravanning Club, Caravan and Motorhome Club),
+    Pitchup, Cool Camping, campsites.co.uk, ukcampsite.co.uk and Google reviews. Review scores are from those sources at the time of research.
+    Facilities, prices and opening dates change — confirm with the site before you travel, especially October–March.
+  </footer>
+</div>
+
+<script>
+const SITES=[
+{n:"Bredon Vale Caravan and Camping",loc:"Norton, Worcestershire — ~35 min",dark:1,near:1,motorhome:1,campfire:1,standout:1, d:"Orchard campsite of 100+ ancient and local fruit trees overlooking Bredon Hill and the Malverns; heated amenity block, natural kids' play area, family room, honesty shop; log pods, bell tent and a vintage 70s caravan for glampers.", f:[["Pitches","Orchard pitches, tents + motorhomes; pods & vintage caravan too"],["Facilities","<span class='ok'>Heated amenity block</span>, family room, honesty shop"]], r:"10/10 (36) ukcampsite; 9.5/10 (217) Pitchup",p:"£25/night",},
+{n:"Woodside Country Park",loc:"Ledbury, Herefordshire — ~40 min",near:1,motorhome:1,campfire:1,standout:1, d:"Family-run conservation site (David Bellamy Gold) with lakes for wild swimming, kayaking and fishing, kids' playground and a sauna; spacious four-acre Cider Mill Field for tents, caravans and motorhomes.", f:[["Pitches","4-acre Cider Mill Field, tents + motorhomes"],["Facilities","<span class='ok'>Excellent facilities</span>, sauna, wild-swimming lake"]], r:"9/10 (50) ukcampsite",p:"£34–£35/night",w:"BBQs and fire pits must be raised off the ground",},
+{n:"West End Farm Campsite",loc:"Arlingham, Gloucestershire — ~45 min",near:1,motorhome:1,campfire:1,standout:1, d:"Tiny 15-pitch campsite on an organic cattle farm in the Severn's horseshoe bend, with a weekend farmyard cafe, community pub walk and riverside walks.", f:[["Pitches","15 pitches on an organic cattle farm"],["Facilities","Small toilet & shower block — cleaning inconsistent at busy times"]], r:"9/10 (25) ukcampsite",p:"From £22/night (2 adults) pitchup.com",w:"Recent pitchup reviews note grass cuttings in showers and overflowing bins — cleaning is inconsistent in busy periods; no on-site lighting by the toilet block",},
+{n:"Highlands Campsite",loc:"Whitebrook, Monmouthshire — ~55 min",dark:1,near:1,motorhome:1,campfire:1,standout:1, d:"Tiny 15-pitch smallholding campsite deep in the Wye Valley with panoramic valley views, campfires, basic-but-spotless facilities and ancient-woodland walks straight from the gate.", f:[["Pitches","15 pitches, tents + vans, panoramic valley views"],["Facilities","Basic but spotless: 2 toilets, 2 showers, no WiFi"]], r:"10/10 (52) ukcampsite",p:"£14/night (pitch, 1 car + 2 people; EHU +£4)",w:"Facilities basic: 2 toilets, 2 showers, no laundry, no WiFi; visitwales notes a portable toilet cubicle in summer months only",},
+{n:"Forest and Wye Valley Camping",loc:"St Briavels, Gloucestershire — ~55 min",dark:1,near:1,motorhome:1,standout:1, d:"Family-run touring site between the Forest of Dean and the Wye Valley with a modern heated shower block, generous pitches, an on-site shop, a children's play area and resident goats.", f:[["Pitches","Generous touring pitches, tents + motorhomes"],["Facilities","<span class='ok'>Modern heated shower block</span>, kids' bath, play area"]], r:"9/10 (78) ukcampsite",p:"£25–£28/night (pitch, 2 people, 1 unit; EHU +£5)",w:"2-night minimum all year; ukcampsite lists no campfires (campsites.co.uk says raised fire pits welcome — check when booking)",},
+{n:"Gloucester Camping at Court Farm",loc:"Twigworth, Gloucestershire — ~20 min",near:1,motorhome:1, d:"Small family-friendly site four miles north of Gloucester where the owners planted hundreds of trees a decade ago — shady, level pitches with a bus stop to Cheltenham at the gate.", f:[["Pitches","22 level pitches among young trees"],["Facilities","Cleanliness flagged in recent reviews — check before booking"]], r:"8/10 (28) ukcampsite; 6.7 (234) pitchup",p:"From £25/night (2 adults) pitchup.com",w:"Recent pitchup reviews flag cleanliness/hygiene issues — call ahead to check current state before booking",},
+{n:"Cherry Tree Glamping And Campsite",loc:"The Camp, Stroud, Gloucestershire — ~25 min",near:1,motorhome:1,campfire:1, d:"Peaceful tree-lined site in the Slad Valley with an on-site cafe, campfires allowed and Cotswold Way walks from the gate.", f:[["Pitches","25 pitches in the Slad Valley"],["Facilities","2 toilets + 1 shower for 25 pitches — thin at busy times"]], r:"8/10 (11) ukcampsite",p:"Not listed",w:"Toilet/shower capacity is widely criticised when busy — book off-peak and confirm facility state before booking",},
+{n:"Marlbank Inn",loc:"Welland, Worcestershire — ~40 min",near:1,motorhome:1, d:"Quirky country pub (North Indian kitchen, cask ales) beneath the Malvern Hills with 22 grass touring and tent pitches open all year; bar, restaurant and evening entertainment on site.", f:[["Pitches","22 grass touring + tent pitches at a country pub"],["Facilities","Showers criticised pre-Mar 2026; new ownership since"]], r:"8/10 (64) ukcampsite",p:"Not listed",w:"No campfires; negative quotes pre-date March 2026 new ownership — check recent reviews before booking",},
+{n:"Rushmere Farm Campsite",loc:"Coleford, Gloucestershire — ~50 min",dark:1,near:1,motorhome:1, d:"Family-run farm campsite half a mile from Coleford with horses, free-roaming chickens, a log-cabin shower block with radiators for cold months, and big open grassy fields.", f:[["Pitches","Big open grassy fields, tents + motorhomes (no hardstanding)"],["Facilities","<span class='ok'>Log-cabin shower block with radiators</span>, family shower rooms"]], r:"8/10 (15) ukcampsite",p:"Not listed (~£20/night with EHU per 2020 review)",w:"No campfires allowed; no hardstandings — grass only, so check winter pitch conditions",},
+{n:"Droitwich Spa Marina Caravan and Camping Park",loc:"Droitwich Spa, Worcestershire — ~50 min",near:1,motorhome:1, d:"15-pitch family-run site on a canal marina with an orchard; 12 fully serviced hardstanding pitches, two new shower/toilet pods, and a small children's play area opposite the marina entrance.", f:[["Pitches","15 pitches, fully serviced hardstanding"],["Facilities","2 new shower/toilet pods"]], r:"9/10 (22) ukcampsite",p:"Not listed",w:"No campfires allowed; all pitches hardstanding (no grass tent pitches)",},
+{n:"Burhope Farm Campsite",loc:"Orcop, Herefordshire — ~55 min",dark:1,near:1,motorhome:1,campfire:1,adults:1, d:"Quiet working-farm campsite on the Welsh border at the foot of the Black Mountains with a centrally-heated toilet and shower block, fire bowls, and a lake for fishing and wild swimming.", f:[["Pitches","Working farm pitches, fire bowls, lake"],["Facilities","<span class='ok'>Centrally-heated toilet & shower block</span>"]], r:"8/10 (51) ukcampsite",p:"£22–£35/night (2 people, 2-night minimum)",w:"Adults-only (ukcampsite listing — confirm with site); grass tent pitches Apr–Sep only, hardstanding Jan–mid Dec; 2-night minimum.",},
+{n:"Trippenkennett Farm",loc:"Three Ashes, Herefordshire — ~1h",motorhome:1,campfire:1, d:"Peaceful working farm with two stocked fishing lakes, level grass and hardstanding pitches, heated toilet and shower block, fire pits and wood on site; Wye Valley and Forest of Dean 10 minutes away.", f:[["Pitches","Level grass + hardstanding pitches"],["Facilities","<span class='ok'>Heated toilet & shower block</span>, free hot water"]], r:"9/10 (34) ukcampsite",p:"Not listed",},
+{n:"Twilite Leisure Park",loc:"near Banbury, Oxfordshire — ~1h",adults:1,motorhome:1, d:"Quirky 21-pitch adults-only site beside the Oxford Canal on a former Victorian pipe and brickworks — the shower block is built inside a restored brick kiln.", f:[["Pitches","21 pitches beside the Oxford Canal"],["Facilities","<span class='ok'>Shower block in a restored brick kiln</span> — warm and clean"]], r:"8/10 (99) ukcampsite",p:"Not listed",w:"Adults-only — not suitable for the Gen trip; campfires not allowed; M40 nearby with a low hum noted by some reviewers",},
+{n:"Fir Tree Farm Caravan Site",loc:"Warmington, Oxfordshire — ~1h",motorhome:1, d:"Quiet, very secluded hilltop farm site with outstanding views, two fishing lakes and an on-site falconry centre — open all year round.", f:[["Pitches","Hilltop farm pitches, tents + tourers"],["Facilities","Clean amenity block, individual lockable shower rooms"]], r:"9/10 (136) ukcampsite",p:"Not listed",w:"Steep access to the lower field; ukcampsite lists no campfires — check before going; check-in is now phone-on-arrival per recent reviews",},
+{n:"Mendip Ski Camp",loc:"Sandford, Somerset — ~1h10",motorhome:1,campfire:1, d:"Peaceful back-to-basics family site in the Mendip Hills AONB next to a dry ski slope; campfires allowed, non-electric grass and hardstanding pitches, wildlife and big skies.", f:[["Pitches","Non-electric grass + hardstanding pitches"],["Facilities","Basic but excellent shower/toilet blocks"]], r:"4.57/5 (19) campsites.co.uk",p:"£28/night",w:"Non-electric pitches only; facilities are basic — limited toilets/showers at busy times.",},
+{n:"Pitfield Farm Certificated Site",loc:"Pembridge, Leominster, Herefordshire — ~1h10",motorhome:1,campfire:1, d:"Tiny working-farm site (5 vans + tents) in an orchard near Pembridge, with flushing toilets and hot showers, kids' playground, dog walk and fire pits; Camping and Caravanning Club certificated site.", f:[["Pitches","5 vans + tents in an orchard"],["Facilities","Flushing toilets + hot showers (basic); cold water only in toilet sink"]], r:"9/10 (11) ukcampsite",p:"Not listed",w:"Club members-only site (membership can be joined on site); tight signposted entrance off the A44",},
+{n:"Broadway Cottage Caravan and Camping",loc:"Cheddar, Somerset — ~1h10",motorhome:1, d:"Small family-run 5-acre site in the heart of the Mendips, 1.5 miles from Cheddar Gorge with views to the reservoir; newly built toilet/shower block and generous pitches.", f:[["Pitches","5 acres, generous pitches"],["Facilities","Newly built toilet/shower block"]], r:"8/10 (60) ukcampsite",p:"£14–£16/night",w:"Campfires not allowed.",},
+{n:"Petruth Paddocks",loc:"Cheddar, Somerset — ~1h10",motorhome:1,campfire:1, d:"Free-range, live-and-let-live family campsite a short walk from Cheddar village, with quirky glamping touches, campfires encouraged and a playground for kids.", f:[["Pitches","200 pitches across separate fields"],["Facilities","<span class='ok'>Spotless, constantly cleaned</span>"]], r:"9/10 (159) ukcampsite",p:"£28/night",w:"200 pitches across separate fields — large site, though with a quirky free-range character rather than a holiday-park feel; some glamping units seasonal.",},
+{n:"Whitney Bridge Camping",loc:"Whitney-on-Wye, Herefordshire — ~1h15",campfire:1, d:"Very small, quiet riverside campsite on the banks of the Wye at a 1779 toll bridge; two toilets and two hot showers, fire pit, canoe launch, fishing and arranged breakfasts/BBQs; open 365 days.", f:[["Pitches","Very small riverside field"],["Facilities","2 toilets + 2 hot showers, clean and stocked"]], r:"9/10 (1) ukcampsite; 4.5 (107) TripAdvisor",p:"Not listed",w:"Only 2 toilets and 2 showers total; book ahead",},
+{n:"St Peter's Farm Campsite",loc:"North Moreton, Oxfordshire — ~1h20",motorhome:1,campfire:1, d:"Secluded family-run working farm in a pretty village, with big pitches, a kids' play area, campfires allowed and two walkable pubs.", f:[["Pitches","~50 pitches, big pitches"],["Facilities","Basic: 2 showers in a container block, ~250m from some pitches"]], r:"8/10 (148) ukcampsite",p:"From £25/night (2 adults) pitchup.com",w:"Very basic in places — part of the site is caravan storage, so set expectations as rustic; two showers only",},
+{n:"The Rodney Stoke Caravan and Camping Park",loc:"Rodney Stoke, Somerset — ~1h20",motorhome:1,campfire:1,adults:1, d:"Tiny adults-only touring park at the foot of the Mendips between Cheddar and Wells, with a pub outside the gate, a cider barn a stroll away and immaculate facilities.", f:[["Pitches","Tiny touring park"],["Facilities","<span class='ok'>Immaculate facilities</span>"]], r:"8/10 (46) ukcampsite",p:"£25/night",w:"Adults-only; BBQs and fires must be raised/self-contained only.",},
+];
+const MAYBE=[
+{n:"Twitey's Camping & Glamping Meadows",loc:"near Stratford-upon-Avon",d:"Secluded wildflower-meadow site with mown private pitches, fire pits, play areas and glamping; 9/10 (22) ukcampsite, 5.0 Google.",w:"ukcampsite lists a Mar–Sep season only while camperbug shows Jan–Dec — confirm true all-year opening with the site directly"},
+{n:"Seren Bach Campsite",loc:"Hay-on-Wye, Brecon Beacons fringe",d:"Small boutique family-friendly campsite at the old Radnor Arms; all-year, hot showers, campfires, 9/10 (14); tents and small campervans only.",w:"ukcampsite claims open all year but campsites.co.uk lists 1 Apr–1 Nov season — confirm true all-year opening with the site directly"},
+{n:"Broadstone Park Camping and Fishery",loc:"near Coleford, Forest of Dean",d:"Small, peaceful farm site on the England/Wales border with fishing lakes, an on-site bar/cafe and stone-baked pizza, 9.4 Pitchup, 9/10 ukcampsite, very kid-friendly.",w:"ukcampsite lists 01/03–31/12 only (not all-year); confirm directly before booking"},
+{n:"Bath Chew Valley Caravan Park",loc:"Bishop Sutton, Chew Valley",d:"Peaceful adults-only, garden-themed touring park between Bath and Bristol, with a heated toilet block and fully serviced hardstandings.",w:"outandaboutlive lists open all year but adults-only and caravan-park style — confirm tent touring availability and all-year terms directly"},
+{n:"The Crawley Inn Campsite",loc:"near Witney, Oxfordshire",d:"Tiny pub campsite at the Crawley Inn, 8/10 (6), listed open all year.",w:"toilet/shower block on site — not confirmed in listings seen"},
+];
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+/* Brief-fit scores (0–100) + love/hate, from the October 2026 review research.
+   Keyed by site name; sites added after the review round have no entry. */
+const SCORES={
+"Bredon Vale Caravan and Camping":{score:93,why:"Confirmed all-year on three sources, dark-skies orchard site, 10/10 reviews, superb heated facilities, play area and family room — ideal for the brief.",
+ loves:["“A really enjoyable stay on a well kept site... Amenity block lovely throughout, with powerful hot showers” — campsites.co.uk","“Open all year round. A good spot to enjoy local towns and the Cotswolds” — campsites.co.uk","“Quiet campsite, clean facilities, helpful owners” — hipcamp.com"],
+ hates:[]},
+"Woodside Country Park":{score:90,why:"Confirmed all-year on site's own website, lake and wild swimming plus playground and sauna make it a standout for a trip with a young child.",
+ loves:["“Can't rate this place high enough” — campsites.co.uk","“The facilities are excellent and the location is beautiful” — campsites.co.uk","“A beautiful site, set in a peaceful location with lots of wildlife” — campsites.co.uk"],
+ hates:[]},
+"West End Farm Campsite":{score:92,why:"All-year confirmed on ukcampsite and pitchup (listed into 2027), tiny and peaceful, campfires allowed, kid-friendly, cafe and pub on foot, 45 min away.",
+ loves:["“Well later out privet pitches, clean facilities, easy check in, beautiful setting” — pitchup.com","“Very quiet and peaceful. Heard owls and saw long tailed tits and squirrels. Only one other on site. Nice walk down to the river.” — pitchup.com","“Small toilet & shower block, always spotless... never had to queue” — wanderlog.com","“The area is great for its scenery and for walking... a very friendly pub nearby (The Red Lion) which serves excellent food.” — pitchup.com"],
+ hates:["“The washing up facility, toilets and showers are very basic and full of grass... it wasn't cleared up the whole weekend” — pitchup.com","“No lights/ lights not working near toilet block so walking over in pitch black at night.” — pitchup.com","“Toilets could have been cleaner” — pitchup.com"]},
+"Highlands Campsite":{score:92,why:"Best pure brief fit: confirmed all-year, tiny, peaceful, quirky, campfires, dark skies, strong reviews, cheap, under an hour.",
+ loves:["“Peaceful and secluded with great walks from the campsite” — ukcampsite.co.uk","“plenty of hot water for showers (no extra charge) and amazing water pressure” — ukcampsite.co.uk","“the campsite is perfect for a quiet peaceful getaway” — ukcampsite.co.uk","“A Michelin star restaurant within walking distance” — tripadvisor.co.uk"],
+ hates:["“the lights in the toilet block weren't working... which made night time visits a bit tricky” — ukcampsite.co.uk","“A small field by comparison to others with pitches probably for comfortably no more than about 8 tents / vans” — tripadvisor.co.uk"]},
+"Forest and Wye Valley Camping":{score:90,why:"Confirmed all-year on own site + two listings, purpose-built heated facilities, best kid-friendly option, under an hour away.",
+ loves:["“The shower rooms were so clean” — ukcampsite.co.uk","“I was really surprised to see that they had a bath there for the children, very family friendly” — ukcampsite.co.uk","“Our littles ones loved the play area alongside the goats and chickens” — ukcampsite.co.uk","“The wardens were both so helpful and could not do enough for us” — campsites.co.uk"],
+ hates:["“The phone signal was terrible on Vodafone” — ukcampsite.co.uk","“the toilet rolls in the gents toilets ran out and were not replenished” — ukcampsite.co.uk","“there are lots of horseflies around when we were there” — ukcampsite.co.uk"]},
+"Gloucester Camping at Court Farm":{score:62,why:"All-year confirmed, 22 pitches, very close to Cheltenham with a lovely tree-planting story, but recent facility-cleanliness complaints are a real concern.",
+ loves:["“The host was lovely, he was very helpful. The toilet and shower facilities was clean. The washup area was clean.” — pitchup.com","“Shady trees! Very level pitches. The trees were very welcome during the recent heatwave. The proprietor was very friendly and polite.” — pitchup.com","“The friendliness of the owner on arrival” — pitchup.com"],
+ hates:["“It's properly grubby! Overflowing bins is an understatement. Grotty toilet block” — pitchup.com","“disgusting facilities, very poor hygiene...we left at 7am the next morning” — pitchup.com","“No WiFi no dog walking facilities dirty toilets/showers over used sites cramped areas” — pitchup.com"]},
+"Cherry Tree Glamping And Campsite":{score:55,why:"All-year confirmed on ukcampsite and pitchup, beautiful Slad Valley setting with cafe and campfires, but the brief's 'proper' facility bar is barely met at busy times.",
+ loves:["“Lovely peaceful site. Fantastic little cafe on site and staff are very welcoming. Really well kept and tidy, toilet facilities spotlessly clean.” — pitchup.com","“Lovely spacious pitches. Very pretty setting with trees lining the pitches.” — pitchup.com","“Very clean. Big spacious pitch, not too far away from the toilet. Peaceful and private” — pitchup.com"],
+ hates:["“Not enough toilets, showers or washing up facilities” — pitchup.com","“2 toilets and 1 shower between 25 pitches got very crowded and quickly dirty” — pitchup.com","“Campsite seems to have been forgotten about in favour of glamping site” — pitchup.com"]},
+"Marlbank Inn":{score:62,why:"Quirky and closest under the Malverns, but mixed reviews and the worst feedback (mud, filthy showers) is winter-season — new ownership from March 2026 may have fixed it.",
+ loves:["“Stayed over in the camper van just to eat here..worth the journey” — Google","“The staff were great, so helpful” — wanderlog.com"],
+ hates:["“The place was a muddy bog” — TripAdvisor","“The showers were absolutely filthy, so we couldn't use them” — TripAdvisor"]},
+"Rushmere Farm Campsite":{score:86,why:"Confirmed all-year (own site says “open all year”), small family-run farm, superb heated showers, great with kids, very close.",
+ loves:["“The showers are the best I've seen on any camp site and are powerful and free” — wanderlog.com","“Adrian and Margaret are very welcoming, warm and friendly” — wanderlog.com","“they were great, it is all in one block including two family shower rooms... well maintained and clean” — tripadvisor.co.uk"],
+ hates:["“the lack of defined 'pitch' meant we had families walking through our patch” — wanderlog.com","“some of it is on a slight slope” — tripadvisor.co.uk","“remember to take cash!” — tripadvisor.co.uk"]},
+"Droitwich Spa Marina Caravan and Camping Park":{score:80,why:"Open all year with new pod bathrooms and a children's play area; quirky marina setting, though the hardstanding-only pitches and no-fire rule temper the score.",
+ loves:["“Newly refurbished... 2 new shower toilet pod facilities” — ukcampsite.co.uk","“A small play area for children opposite the marina entrance” — ukcampsite.co.uk"],
+ hates:[]},
+"Burhope Farm Campsite":{score:68,why:"All-year and beautifully reviewed, but adults-only and grass pitches seasonal — poor fit for a family tent trip.",
+ loves:["“One of the warmest welcomes I have ever received from any site I have visited” — campsites.co.uk","“The facilities are always immaculately clean” — campsites.co.uk","“This site is an absolute gem, made perfect by such a friendly and helpful owner” — campsites.co.uk"],
+ hates:[]},
+"Trippenkennett Farm":{score:80,why:"All-year with year-round heated shower block, campfires, fishing lakes and strong reviews; children welcome.",
+ loves:["“An excellent clean, accessible toilet and shower block with central heating and free hot water” — campsites.co.uk","“You'll stay on a peaceful working farm, offering level pitches and modern facilities” — campsites.co.uk","“really is a hidden gem of a place!!” — Google"],
+ hates:["“the mobile signal is pretty much non-existent” — Google"]},
+"Twilite Leisure Park":{score:74,why:"All-year confirmed, small and quirky with real history, warm clean facilities, but adults-only excludes the child on this trip.",
+ loves:["“Lovely small rural site. Very close to the canal - good for walking... the amenity block was lovely and warm, as well as being clean.” — Google (top-rated.online)","“Quiet and peaceful.. Great clean hot showers...WiFi is a little hit and miss. Lovely owners make you feel at home...” — Google (top-rated.online)","“Beautiful clean and relaxing site. Lovely people running it and nice large well kept grass area for a walk with your dog” — Google (top-rated.online)"],
+ hates:["“The only downside for me was the walk from site along the busy road was a little challenging” — Google (top-rated.online)","“Only downside I'd say is not being able to park next to tent” — Google (top-rated.online)"]},
+"Fir Tree Farm Caravan Site":{score:88,why:"All-year confirmed (own site description + pitchup), 9/10 from 136 reviews, stunning views, falconry and lakes for Gen, genuinely secluded.",
+ loves:["“Lovely site, great views, peaceful and tranquil. Amenity clean and well maintained.” — TripAdvisor","“The views were so stunning I almost teared up! The lake shimmered in the sun and the rolling hills were from a painting!” — TripAdvisor","“The toilets and showers are in a little block... they are lovely and clean... individual with shower, toilet, sink, bench and lockable door” — TripAdvisor","“We took part in the Falconry Experience which was interesting and informative.” — TripAdvisor"],
+ hates:["“The woman was cold with my sister right away” — TripAdvisor (2025 review about the new lady running the site)","“The steep hill to enter and exit the lower field is not for the faint hearted” — ukcampsite.co.uk"]},
+"Mendip Ski Camp":{score:87,why:"Confirmed all-year with a verified winter stay, genuinely peaceful, campfires permitted and family friendly — facilities are modest but well kept.",
+ loves:["“Loved the family feel and the owner's attention to detail” — David J, campsites.co.uk","“The owner was wonderful... the shower and toilet blocks were excellent” — pitchup.com","“Hard standing, well shelter from from wind (as It is winter), open all year, hot showers” — pitchup.com"],
+ hates:["“Some traffic noise overnight on A370” — pitchup.com"]},
+"Pitfield Farm Certificated Site":{score:82,why:"All-year confirmed by ukcampsite and the Club, genuinely tiny and peaceful with campfires, and reviewers confirm it is safe for small children.",
+ loves:["“Very welcoming as always... no light pollution and a beautiful orchard. Facilities basic but very clean... Loo was spotless!” — ukcampsite.co.uk","“A fabulous small site... we went with our 5 and 6 yr old and another 2 families and it was really safe for the children” — ukcampsite.co.uk","“It is a quiet site with fruitful apple and plum trees in the right season” — ukcampsite.co.uk"],
+ hates:["“We found it difficult to find the way in... the farm sign has a green painted background against a green hedge” — ukcampsite.co.uk","“Cold water only in the toilet sink so if you are a tenter you are in for a cold morning wash” — ukcampsite.co.uk"]},
+"Broadway Cottage Caravan and Camping":{score:80,why:"Confirmed all-year on two sources, small and cheap with a new shower block in prime Mendip walking country — but no campfires and limited verbatim review detail.",
+ loves:["“Owners very helpful with booking and giving directions. Very peaceful site.” — ukcampsite.co.uk"],
+ hates:[]},
+"Petruth Paddocks":{score:78,why:"Confirmed all-year, campfires and kid heaven with a playground — excellent reviews, but it fails the 'small' test at 200 pitches.",
+ loves:["“Absolutely stunning, the staff are wonderful, and the facilities are spotless!” — Lisa M, campsites.co.uk","“One of the best campsites I've stayed at” — Abby M, campsites.co.uk","“Showers and toilets constantly being cleaned” — Google reviews"],
+ hates:[]},
+"Whitney Bridge Camping":{score:77,why:"Genuinely quirky riverside spot open all year with campfires and clean facilities, but only one ukcampsite review and no listed pricing.",
+ loves:["“Very quiet and private small campsite with fire pit, direct canoe launch/land and parking” — TripAdvisor","“Two toilets and two hot showers available (clean and fully stocked with soap and loo rolls etc)” — TripAdvisor"],
+ hates:[]},
+"St Peter's Farm Campsite":{score:78,why:"All-year confirmed, campfires and play area suit the Gen trip, good reviews overall, but 50 pitches and some basic/muddy facilities.",
+ loves:["“Quiet site with beautiful bird song and wildlife. Two great pubs walkable distance.” — pitchup.com","“A beautyful place” — pitchup.com","“Location clean toilets and showers” — pitchup.com","“The quiet and listening to the birds. Tidy pitches. Warm owner always helpful” — pitchup.com"],
+ hates:["“Its a mash of storage, permentant living and the odd holiday makers. It was very basic” — pitchup.com","“Ladies toilets were pretty bad, unlike the gents! Only two showers which were about 250m away in another container.” — pitchup.com","“Showers were a bit dirty - floors very muddy” — pitchup.com"]},
+"The Rodney Stoke Caravan and Camping Park":{score:70,why:"Confirmed all-year on the site's own website, tiny and spotless — but adults-only, so only relevant if Gen isn't coming.",
+ loves:["“It's without a doubt the cleanest campsite we've visited!” — Kiane G, campsites.co.uk","“Beautifully kept, peaceful and secluded campsite with good walking links to a few pubs” — Enya H, campsites.co.uk","“The plot we had was great near the bushes - it was like we had the whole site to ourselves!” — Alys P, campsites.co.uk"],
+ hates:[]},
+};
+function scorePill(s){
+  const sc=SCORES[s.n];
+  if(!sc)return `<span class="scorePill dim" title="Added after the review round — not yet scored">–</span>`;
+  return `<span class="scorePill" title="Brief-fit score: how well it matches the brief, out of 100">${sc.score}</span>`;
+}
+function loveHate(s){
+  const sc=SCORES[s.n];
+  if(!sc)return '';
+  const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+  return `<details class="lh"><summary>What people love &amp; hate</summary>`+
+    `<div class="why"><b>Brief fit ${sc.score}/100:</b> ${sc.why}</div>`+
+    `<div><b class="lv">Loved</b><ul>${li(sc.loves)}</ul></div>`+
+    (sc.hates.length?`<div><b class="ht">Hated</b><ul>${li(sc.hates)}</ul></div>`:'')+`</details>`;
+}
+function tagList(s){
+  const t=[];
+  if(s.dark)t.push(['dark','★ Dark skies']);
+  if(s.motorhome)t.push(['','Motorhome-friendly']);
+  if(s.campfire)t.push(['','Campfires']);
+  if(s.adults)t.push(['','Adults only']);
+  if(s.near)t.push(['','< 1 hr']);
+  return t.map(([c,x])=>`<span class="tag ${c}">${x}</span>`).join('');
+}
+function scene(hue){
+  return `<div class="scene" style="--h:${hue}"><svg viewBox="0 0 400 60" preserveAspectRatio="xMidYMid slice">`+
+  `<g fill="#e8f0f2" opacity=".55"><circle cx="40" cy="12" r="1.1"/><circle cx="150" cy="8" r="1.3"/><circle cx="250" cy="14" r="1"/><circle cx="330" cy="9" r="1.2"/><circle cx="200" cy="18" r=".9"/></g>`+
+  `<polygon points="0,60 70,26 150,60" style="fill:hsl(var(--h,200),22%,30%)" opacity=".8"/>`+
+  `<polygon points="110,60 210,14 320,60" style="fill:hsl(var(--h,200),25%,21%)"/>`+
+  `<polygon points="270,60 350,30 400,60" style="fill:hsl(var(--h,200),28%,15%)"/>`+
+  `<rect x="0" y="30" width="400" height="9" fill="#dfe9ea" opacity=".1"/>`+
+  `<g style="fill:hsl(var(--h,200),30%,9%)">`+
+  `<polygon points="36,60 46,30 56,60"/><polygon points="50,60 57,38 64,60"/>`+
+  `<polygon points="330,60 340,28 350,60"/><polygon points="344,60 351,40 358,60"/>`+
+  `</g></svg></div>`;
+}
+function card(s,idx){
+  const facts=s.f.map(([k,v])=>`<li><b>${k}:</b> ${v}</li>`).join('');
+  const hue=205+((idx*47)%55);
+  return `<article class="card" data-i="${idx}" data-tags="${[s.standout?'standout':'',s.dark?'dark':'',s.near?'near':'',s.motorhome?'motorhome':'',s.campfire?'campfire':'',s.adults?'adults':'kids'].join(' ')}">`+
+    scene(hue)+
+    `<div class="cbody"><div class="top"><div><h3>${s.n}</h3><div class="loc">${s.loc}</div></div><div class="badges">${s.standout?'<span class="badge">★ Standout</span>':''}${scorePill(s)}</div></div>`+
+    `<p class="desc">${s.d}</p>`+
+    `<ul class="facts">${facts}</ul>`+
+    `<div class="rev">${s.r}</div>`+
+    loveHate(s)+
+    `<div class="facts"><li><b>Price:</b> ${s.p}</li></div>`+
+    (s.w?`<div class="warn">⚠️ ${s.w}</div>`:'')+
+    `<div class="tags">${tagList(s)}</div>`+
+    `<div class="starRow" data-i="${idx}"><span>Your score:&nbsp;</span>${[1,2,3,4,5].map(v=>`<span class="star" data-v="${v}">★</span>`).join('')}</div>`+
+    `<div class="go">${s.link?`<a href="${s.link[0]}" target="_blank" rel="noopener">${s.link[1]} →</a>`:'<span class="nolink">Find it on ukcampsite.co.uk / the club sites</span>'}</div>`+
+    `</div></article>`;
+}
+document.getElementById('grid').innerHTML=SITES.map((s,i)=>card(s,i)).join('');
+document.getElementById('maybe').innerHTML=MAYBE.map(s=>
+ `<article class="card"><div class="cbody"><div class="top"><div><h3>${s.n}</h3><div class="loc">${s.loc}</div></div><span class="badge dim">Check first</span></div>`+
+  `<p class="desc">${s.d}</p><div class="warn">⚠️ ${s.w}</div></div></article>`).join('');
+/* ---------- filters ---------- */
+const chips=[...document.querySelectorAll('#chips .chip[data-f]')];
+function apply(){
+  const on=chips.find(c=>c.classList.contains('on')).dataset.f;
+  let n=0;
+  document.querySelectorAll('#grid .card').forEach(c=>{
+    const show=on==='all'||c.dataset.tags.includes(on);
+    c.classList.toggle('hide',!show); if(show)n++;
+  });
+  document.getElementById('count').textContent=n+(n===1?' site':' sites');
+  document.getElementById('secCount').textContent='('+n+')';
+}
+chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('on'));c.classList.add('on');apply();}));
+apply();
+/* ---------- sort by brief-fit score ---------- */
+let sortByScore=false;
+document.getElementById('sortBtn').addEventListener('click',function(){
+  sortByScore=!sortByScore; this.classList.toggle('on',sortByScore);
+  const grid=document.getElementById('grid');
+  [...grid.children].sort((a,b)=>{
+    const ia=+a.dataset.i, ib=+b.dataset.i;
+    if(!sortByScore)return ia-ib;
+    const sa=(SCORES[SITES[ia].n]||{}).score, sb=(SCORES[SITES[ib].n]||{}).score;
+    if(sa==null&&sb==null)return ia-ib;
+    if(sa==null)return 1; if(sb==null)return -1;
+    return sb-sa;
+  }).forEach(c=>grid.appendChild(c));
+  apply();
+});
+/* ---------- poll: named voters, per-person + combined leaderboards ---------- */
+const PKEY='wildskies_cheltenham_v1';
+let poll={voters:{},current:null};
+try{const raw=JSON.parse(localStorage.getItem(PKEY)||'null');if(raw&&raw.voters)poll=raw;}catch(e){}
+let lbTab='me';
+function savePoll(){try{localStorage.setItem(PKEY,JSON.stringify(poll))}catch(e){}}
+function myScores(){return (poll.current&&poll.voters[poll.current])?poll.voters[poll.current]:{};}
+function paintStars(){
+  const ms=myScores();
+  document.querySelectorAll('.starRow').forEach(row=>{
+    const i=row.dataset.i, v=ms[i]||0;
+    row.querySelectorAll('.star').forEach(st=>st.classList.toggle('lit',+st.dataset.v<=v));
+  });
+}
+function boardRows(){
+  if(lbTab==='me'){
+    const ms=myScores();
+    return SITES.map((s,i)=>({s,i,v:ms[i]||0})).filter(x=>x.v>0)
+      .sort((a,b)=>b.v-a.v||((b.s.standout?1:0)-(a.s.standout?1:0))||a.i-b.i)
+      .map(x=>({...x,label:'★'.repeat(x.v)+'☆'.repeat(5-x.v)}));
+  }
+  const rows=SITES.map((s,i)=>{
+    const votes=Object.keys(poll.voters).map(n=>poll.voters[n][i]).filter(v=>v>0);
+    if(!votes.length)return null;
+    return {s,i,v:votes.reduce((a,b)=>a+b,0)/votes.length,nv:votes.length,
+      label:'★ '+(votes.reduce((a,b)=>a+b,0)/votes.length).toFixed(1)+' · '+votes.length+(votes.length===1?' vote':' votes')};
+  }).filter(Boolean).sort((a,b)=>b.v-a.v||b.nv-a.nv||((b.s.standout?1:0)-(a.s.standout?1:0))||a.i-b.i);
+  return rows;
+}
+function renderBoard(){
+  const rows=boardRows(), lb=document.getElementById('leaderboard'), empty=document.getElementById('lbEmpty');
+  document.querySelectorAll('#grid .card').forEach(c=>c.classList.remove('isLeader'));
+  const names=Object.keys(poll.voters);
+  if(!rows.length){
+    lb.innerHTML='';
+    empty.style.display='';
+    empty.textContent = names.length
+      ? 'Tap the stars on any site below to score it out of five — the leader will be crowned here.'
+      : 'Add your name above, then tap the stars on any site to score it out of five.';
+    return;
+  }
+  empty.style.display='none';
+  lb.innerHTML=rows.map((x,r)=>
+    `<div class="lbRow${r===0?' leader':''}"><span class="lbRank">${r===0?'👑':r+1}</span>`+
+    `<span class="lbName">${x.s.n}</span><span class="lbStars">${x.label}</span>`+
+    `<span class="lbLoc">${x.s.loc}</span></div>`).join('');
+  const lead=document.querySelector('#grid .card[data-i="'+rows[0].i+'"]');
+  if(lead)lead.classList.add('isLeader');
+}
+function renderVoters(){
+  const names=Object.keys(poll.voters), bar=document.getElementById('voterBar');
+  let h='<span class="vlabel">Scoring as:</span>';
+  h+=names.map(n=>`<button class="chip${n===poll.current?' on':''}" data-voter="${esc(n)}">${esc(n)}</button>`).join('');
+  h+='<button class="chip" id="addVoter" title="Add another person">+ Add person</button>';
+  bar.innerHTML=h;
+  bar.querySelectorAll('[data-voter]').forEach(b=>b.addEventListener('click',()=>{
+    poll.current=b.dataset.voter; savePoll(); renderVoters(); paintStars(); renderBoard(); syncTabs();
+  }));
+  document.getElementById('addVoter').addEventListener('click',askName);
+  const wb=document.getElementById('whoBanner');
+  if(!names.length){
+    wb.style.display='';
+    wb.innerHTML='👋 Who’s scoring? <input id="whoInput" placeholder="Your name — e.g. Ian" maxlength="24"> <button class="chip" id="whoGo">Start scoring</button>';
+    const go=()=>{const v=document.getElementById('whoInput').value.trim(); if(!v)return;
+      if(!poll.voters[v])poll.voters[v]={}; poll.current=v; savePoll();
+      wb.style.display='none'; renderVoters(); paintStars(); renderBoard(); syncTabs();};
+    document.getElementById('whoGo').addEventListener('click',go);
+    document.getElementById('whoInput').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+  } else wb.style.display='none';
+}
+function askName(){
+  const v=prompt('Name for this voter (e.g. Hattie):');
+  if(!v)return; const name=v.trim().slice(0,24); if(!name)return;
+  if(!poll.voters[name])poll.voters[name]={};
+  poll.current=name; savePoll(); renderVoters(); paintStars(); renderBoard(); syncTabs();
+}
+function syncTabs(){
+  document.querySelectorAll('#lbtabs .chip').forEach(t=>t.classList.toggle('on',t.dataset.tab===lbTab));
+  const me=document.querySelector('#lbtabs [data-tab="me"]');
+  me.textContent = poll.current ? poll.current+'’s leaderboard' : 'My leaderboard';
+}
+document.querySelectorAll('#lbtabs .chip').forEach(t=>t.addEventListener('click',()=>{
+  lbTab=t.dataset.tab; syncTabs(); renderBoard();
+}));
+document.getElementById('grid').addEventListener('click',e=>{
+  const st=e.target.closest('.star'); if(!st)return;
+  if(!poll.current){flash('Add your name first (above), then score away.');return;}
+  const i=st.parentElement.dataset.i, v=+st.dataset.v, ms=myScores();
+  if(ms[i]===v){delete ms[i]}else{ms[i]=v}
+  savePoll(); paintStars(); renderBoard();
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(!poll.current)return;
+  poll.voters[poll.current]={}; savePoll(); paintStars(); renderBoard();
+  flash('Scores cleared for '+poll.current+'.');
+});
+document.getElementById('shareBtn').addEventListener('click',()=>{
+  if(!poll.current){flash('Add your name first (above).');return;}
+  const ms=myScores(), ks=Object.keys(ms);
+  if(!ks.length){flash('Score a few sites first, then copy the link.');return;}
+  const url=location.href.split('#')[0]+'#v='+encodeURIComponent(poll.current)+'&s='+ks.map(k=>k+':'+ms[k]).join(',');
+  const done=()=>flash('Scores link copied — send it over and they can save your scores alongside theirs.');
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(()=>{prompt('Copy your scores link:',url)})}
+  else{prompt('Copy your scores link:',url)}
+});
+function flash(msg){
+  const b=document.getElementById('shareBanner');
+  b.style.display=''; b.textContent=msg;
+  setTimeout(()=>{if(!b.dataset.keep)b.style.display='none'},4500);
+}
+(function(){
+  const m=location.hash.match(/#v=([^&]*)&s=([\d:,]+)/); if(!m)return;
+  let name=''; try{name=decodeURIComponent(m[1])}catch(e){}
+  const incoming={};
+  (m[2]||'').split(',').forEach(p=>{const kv=p.split(':');if(kv[0]!==''&&kv[1])incoming[kv[0]]=+kv[1];});
+  if(!name||!Object.keys(incoming).length)return;
+  const b=document.getElementById('shareBanner');
+  b.dataset.keep='1'; b.style.display='';
+  b.innerHTML=esc(name)+' shared their site scores with you. <button class="chip" id="useShared">Save '+esc(name)+'’s scores</button> <button class="chip" id="dropShared">Dismiss</button>';
+  document.getElementById('useShared').onclick=()=>{
+    poll.voters[name]=incoming; poll.current=poll.current||name; savePoll();
+    delete b.dataset.keep; b.style.display='none';
+    history.replaceState(null,'',location.pathname+location.search);
+    renderVoters(); paintStars(); renderBoard(); syncTabs();
+    flash(name+'’s scores saved — flip to “Everyone combined” to see the joint table.');
+  };
+  document.getElementById('dropShared').onclick=()=>{delete b.dataset.keep;b.style.display='none';history.replaceState(null,'',location.pathname+location.search);};
+})();
+renderVoters(); paintStars(); syncTabs(); renderBoard();
+</script>
+</body>
+</html>
